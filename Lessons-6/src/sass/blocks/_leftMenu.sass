@@ -1,0 +1,45 @@
+.leftMenu
+    position: relative
+    &__wrapper
+        position: absolute
+    &__menu
+        // position: absolute
+        // min-height: 800px
+        // position: static
+        min-height: 100%
+        position: fixed
+        width: 170px
+        z-index: 1
+        background-color: $white-color
+        box-shadow: 0 3px 10px #e0e2e6
+        padding: 10px 0 50px 0
+    a
+        text-decoration: none
+        color: $grey-color
+    &__subheader
+        margin-top: 20px
+        margin-left: 28px
+        font-size: 13px
+        position: relative
+        transition: .3s all
+        &:before
+            content: ""
+            position: absolute
+            top: -8px
+            left: -28px
+            width: 4px
+            display: none
+            height: 34px
+            background-color: $grey-color
+        &:hover
+            color: $black-color
+        &:hover::before
+            display: block
+    &__header
+        margin-top: 45px
+        color: $black-color
+        margin-left: 28px
+        font-size: 16px
+        font-weight: 700
+        cursor: default
+

@@ -1,0 +1,154 @@
+// @media (min-height: 1120px)
+//     .leftMenu
+//         &__menu
+//             min-height: 100%
+//             position: fixed
+//     .footer
+//         bottom: 90px
+//     .people
+//         &__wrapper
+//             min-height: 100%
+//             position: fixed
+@media (max-height: 1120px)
+    .leftMenu
+        &__menu
+            // min-height: 800px
+            position: static
+    .footer
+        bottom: 0
+    .people
+        &__wrapper
+            min-height: 1020px
+            position: relative
+@media (max-height: 1120px) and (min-width: 767px)
+    .leftMenu
+        &__menu
+            min-height: 800px
+@media (max-width: 991px)
+    .container
+        max-width: 720px
+    .footer
+        width: 548px
+    .people
+        &__users
+            padding-top: 0px
+        &__header
+            h1
+                font-size: 24px
+        &__buttons
+            margin-top: 40px
+        &__subMenu
+            &_search
+                form 
+                    width: 250px
+    .profile
+        &__info
+            &_descr
+                font-size: 11px
+@media (max-width: 767px)
+    .container
+        max-width: 550px
+    .leftMenu
+        &__subheader
+            margin-top: 10px
+            margin-left: 18px
+            font-size: 10px
+        &__header
+            margin-top: 23px
+            margin-left: 18px
+            font-size: 14px
+        &__menu
+            width: 130px
+    .people
+        &__wrapper
+            margin-left: 130px
+        &__header
+            min-height: 60px
+            h1
+                font-size: 18px
+        &__subMenu
+            min-height: 40px
+            &_search
+                input 
+                    display: none
+                button
+                    position: static
+                form
+                    width: 20px
+            &_items
+                margin-right: 20px
+                width: 200px
+        &__buttons
+            margin-top: 20px
+    .button
+        padding: 6px 10px
+        margin: 0 15px
+        font-size: 12px
+    .profile
+        align-items: center
+        margin-right: 20px
+        &__activity
+            margin-right: 0px
+    .footer
+        width: 418px
+        &__menu
+            ul
+                a
+                    font-size: 11px
+        &__devider
+            margin-top: 0px
+        &__bottom
+            padding-top: 14px
+            font-size: 11px
+@media (max-height: 1120px) and (max-width: 767px)
+    .leftMenu
+        &__menu
+            min-height: 1020px
+@media (max-width: 576px)
+    .container
+        max-width: 100%
+    .leftMenu
+        display: none
+    .footer
+        width: 100%
+        min-height: 50px
+        &__menu
+            display: flex
+            justify-content: center
+            padding: 12px 0 0 0px
+            ul
+                a
+                    font-size: 14px
+        &__devider
+            display: none
+        &__bottom
+            display: none
+    .navigation
+        display: none
+    .people
+        &__header
+            background-color: #F2F4F8
+            &_mobileFilter
+                display: block
+        &__wrapper
+            margin-left: 0px
+            // min-height: 1140px
+        &__subMenu
+            display: none
+        &__buttons
+            margin-top: 10px
+    .profile
+        margin-top: 30px
+        &__info
+            &_descr
+                font-size: 13px
+    .button
+        padding: 10px 18px 10px 13px
+        margin: 10px 20px
+        font-size: 14px
+    .header
+        height: 84px
+        &__wrapper
+            display: none
+        &__wrapperMobile
+            display: flex
