@@ -9,7 +9,10 @@
 //         &__wrapper
 //             min-height: 100%
 //             position: fixed
-@media (max-height: 1120px)
+@media (min-width:100px) and (max-height: 1120px)
+    .container
+        min-width: 720px
+        max-width: 960px
     .leftMenu
         &__menu
             // min-height: 800px
@@ -24,8 +27,9 @@
     .leftMenu
         &__menu
             min-height: 800px
-@media (max-width: 991px)
+@media (min-width:100px) and (max-width: 991px)
     .container
+        min-width: 550px
         max-width: 720px
     .footer
         width: 548px
@@ -45,7 +49,7 @@
         &__info
             &_descr
                 font-size: 11px
-@media (max-width: 767px)
+@media (min-width:100px) and (max-width: 767px)
     .container
         max-width: 550px
     .leftMenu
@@ -100,12 +104,13 @@
         &__bottom
             padding-top: 14px
             font-size: 11px
-@media (max-height: 1120px) and (max-width: 767px)
+@media (max-height: 1120px) and (min-width:100px) and (max-width: 767px)
     .leftMenu
         &__menu
             min-height: 1020px
-@media (max-width: 576px)
+@media (min-width:100px) and (max-width: 576px)
     .container
+        min-width: 100px
         max-width: 100%
     .leftMenu
         display: none
