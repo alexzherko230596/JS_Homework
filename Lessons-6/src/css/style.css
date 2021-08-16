@@ -326,7 +326,7 @@ body {
     position: absolute;
     top: 11px;
     right: 11px;
-    background: url(/src/icons/search.png) center center/cover no-repeat;
+    background: url(../icons/search.png) center center/cover no-repeat;
     cursor: pointer;
     border: none;
     outline: none; }
