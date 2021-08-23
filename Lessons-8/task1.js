@@ -4,7 +4,7 @@ function Animal(name){
     this._foodAmount = 0;
 }
 
-Animal.prototype.formatFoodAmount = function(){
+Animal.prototype._formatFoodAmount = function(){
     return this._foodAmount + ' гр.';
 }
 
@@ -13,7 +13,7 @@ Animal.prototype.feed = function(){
 }
 
 Animal.prototype.dailyNorm = function(amount){
-    if(!arguments.length) return this.formatFoodAmount();
+    if(!arguments.length) return this._formatFoodAmount();
     if(amount<50) {
         throw new Error('Your feed should be more than 50');
     }
