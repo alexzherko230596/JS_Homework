@@ -21,9 +21,12 @@ var clonedObj = deepClone(initialObj);
 
 function deepClone(obj){
     var clone = {};
-
+    if(Array.isArray(obj) && obj.length) {
+        clone = [];
+    }
+    // else clone[k] = {};
     for(var k in obj){
-        if((typeof obj[k]) === 'object'){
+        if((typeof obj[k]) === 'object' && obj[k] !== null){
             clone[k] = deepClone(obj[k]);
         }
         else{
@@ -35,7 +38,7 @@ function deepClone(obj){
 
 // console.log(clonedObj);
 clonedObj.object.object2.array2[1].name = 'Vasya';
-// clonedObj.array.push(2);
+clonedObj.array.push(2);
 
 console.log(initialObj);
 console.log(clonedObj);
