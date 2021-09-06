@@ -9,10 +9,22 @@ var row = rows[0];
 lastRow.onclick = addRow;
 lastRow.style.cursor = 'pointer';
 
+addInputToAllTd()
+
+function addInputToAllTd() {
+    var td = table1.getElementsByTagName('td')
+    for (var i = 0; i < td.length; i++) {
+        var newInput = document.createElement('input')
+        td[i].appendChild(newInput)
+    }
+}
+
 function addRow(){
     var newRow = document.createElement('tr');
     for (var i = 0; i < 3; i++){
         var td = document.createElement('td');
+        var input = document.createElement('input')
+        td.appendChild(input)
         newRow.appendChild(td)
     }
     table1.insertBefore(newRow, lastRow);
@@ -21,15 +33,8 @@ function addRow(){
 table.addEventListener('click', activeInput);
 
 function activeInput(event){
-    if(event.target !== lastCol) {
-        var input = document.createElement('input');
-        // var input = document.createElement('input');
-        input.focus();
-        input.style.width = '99%' ;
-        input.style.height = '98%' ;
-
-        input.value = event.target.innerHTML;
-        event.target.innerHTML = '';
-        event.target.appendChild(input); 
+    if(event.target !== lastCol && event.target.localName === 'td') {
+        console.log(event.target.localName)
+        event.target.lastChild.focus()
     }
 }
