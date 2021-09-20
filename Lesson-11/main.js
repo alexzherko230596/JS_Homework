@@ -6,35 +6,33 @@ var lastCol =  document.getElementsByClassName('button')[0];
 var rows = document.getElementsByTagName('tr');
 var row = rows[0];
 
-lastRow.onclick = addRow;
-lastRow.style.cursor = 'pointer';
+table1.addEventListener('click', tdHandler);
+function tdHandler(){
+    var target = event.target;
+    if(target.tagName === 'TD'){
+        if(target.id === lastCol){
+            var newRow = document.createElement('tr'),
+                firstRow = table1.firstElementChild;
 
-addInputToAllTd()
-
-function addInputToAllTd() {
-    var td = table1.getElementsByTagName('td')
-    for (var i = 0; i < td.length; i++) {
-        var newInput = document.createElement('input')
-        td[i].appendChild(newInput)
+            newRow.innerHTML = '<td></td><td></td><td></td>'
+            table1.insertBefore(newRow, firstRow);
+        }
+        else{
+            var text = target.innerText;
+            target.innerHTML = '<input type="text">';
+            var input = table1.getElementsByTagName('input')[0];
+            input.focus();
+            input.value = text;
+            input.onblur = setText;
+        }
     }
 }
 
-function addRow(){
-    var newRow = document.createElement('tr');
-    for (var i = 0; i < 3; i++){
-        var td = document.createElement('td');
-        var input = document.createElement('input')
-        td.appendChild(input)
-        newRow.appendChild(td)
-    }
-    table1.insertBefore(newRow, lastRow);
+function setText(){
+    var target = event.currentTarget;
+    target.parentNode.innerHTML = target.value;
 }
 
-table.addEventListener('click', activeInput);
-
-function activeInput(event){
-    if(event.target !== lastCol && event.target.localName === 'td') {
-        console.log(event.target.localName)
-        event.target.lastChild.focus()
-    }
+table1.onkeypress = function(){
+    (event.key === 'Enter') && table1.getElementsByTagName('input')[0].blur();
 }

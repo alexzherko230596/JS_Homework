@@ -1,29 +1,25 @@
 var block = document.getElementById('container');
 var newParagraph = document.createElement('p');
-newParagraph.innerHTML = 
-    '<p>There are so many symbols here ' +
-    '<a href="https://www.google.ru/">Google</a> and ' + 
-    '<a href="https://www.yahoo.com/">Yahoo!</a></p>';
-block.appendChild(newParagraph);
 var newParagraph2 = document.createElement('p');
-newParagraph2.innerHTML = 
-    '<p>There are so many russian symbols ' +
-    '<a href="https://mail.ru/">Mail</a> and ' + 
-    '<a href="https://yandex.ru/">Yandex</a></p>';
+
+newParagraph2.innerHTML = 'There are  <a href="https://mail.ru/">Mail</a> and <a href="https://yandex.ru/">Yandex</a>';
+newParagraph.innerHTML = 'There are  <a href="https://www.google.ru/">Google</a> and <a href="https://www.yahoo.com/">Yahoo!</a></p>';
+
+block.appendChild(newParagraph);
 block.appendChild(newParagraph2);
 
 var clickButtons = document.getElementsByTagName('button');
 var clickButton = clickButtons[0];
-var paragraphs = document.getElementsByTagName('p');
-var paragraph = paragraphs[0];
+// var paragraphs = document.getElementsByTagName('p');
+// var paragraph = paragraphs[0];
+
 clickButton.onclick = changeFontAndColor;
 
 function changeFontAndColor(){
     
-    var links = paragraph.getElementsByTagName('a');
-    for(var k of links){
-        k.style.color = 'red';
-        k.style.fontWeight = '900';
+    var links = newParagraph.children;
+    for(var i = 0; i < links.length; i++){
+        links[i].classList.add('changed');
     }
 }
 
